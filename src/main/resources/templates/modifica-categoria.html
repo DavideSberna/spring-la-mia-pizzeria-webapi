@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Pizzeria</title>
+<link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+ <style>
+		
+		img{
+		  height: 250px; 
+		  object-fit: cover; 
+		}
+		
+		.img-show-page{
+			width: 100%; 
+			height: auto;
+			max-height: 400px;
+		}
+		
+	</style>
+</head>
+<body>
+	<header class="bg-dark">
+		<footer class="container">
+			<section class="pt-3 pb-3 row">
+				<div class="col-3 d-flex align-items-center">
+					<h3 class="p-0 m-0 text-white">La migliore pizza</h3>
+				</div>
+				<div class="col-9">
+					<a class="btn btn-outline-light" th:href="@{/}" role="button">Home</a>
+				</div>
+			</section>
+		</footer>
+	</header>
+	
+	<main class="bg-light vh-100">
+		<section class="container">
+			<div class="pt-5 pb-3">				
+				
+			</div>
+			<form class="col-6 m-auto" th:action="@{/pizza/edit/new-category/{id} (id=${category.id})}" method="POST">
+				
+				<div class="form-group mb-3">
+				    <label for="nome">Nome</label>
+				    <input type="text" class="form-control" id="nome" name="nome" placeholder="..." th:field="${category.nome}">
+				</div>
+				
+				  
+			   <button type="submit" class="btn btn-primary">Aggiungi</button>
+	
+			</form>
+		</section>
+		
+	</main>
+	
+</body>
+</html>
